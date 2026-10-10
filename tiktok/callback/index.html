@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>길답 PICK 틱톡 연결</title>
+<style>body{font-family:'Malgun Gothic',sans-serif;max-width:560px;margin:40px auto;padding:16px;text-align:center;color:#222;background:#fff}</style></head>
+<body>
+<h2>틱톡 연결 중…</h2>
+<p id="msg">잠시만 기다려 주세요.</p>
+<script>
+  // 틱톡이 돌려준 code를 이 컴퓨터에서 기다리는 길답 PICK 프로그램(127.0.0.1)으로 넘겨 줌. 이 페이지는 아무것도 저장하지 않음.
+  var q = window.location.search;
+  if (q.indexOf("code=") !== -1 || q.indexOf("error=") !== -1) {
+    window.location.replace("http://127.0.0.1:8765/cb" + q);
+  } else {
+    document.getElementById("msg").textContent = "길답 PICK 프로그램에서 '틱톡 연결'을 시작해 주세요.";
+  }
+</script>
+</body></html>
